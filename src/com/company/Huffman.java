@@ -11,7 +11,7 @@ public class Huffman {
     Opdracht 1a.
     */
 
-    public List<Knoop> countChars(String input){
+    public List<Knoop> countChars(String input) {
         int count;
         frequentie = new ArrayList<Knoop>();
 
@@ -26,7 +26,7 @@ public class Huffman {
         }
 
         // Per char tellen hoe vaak hij voor komt en een nieuw object toevoegen aan de lijst
-        for (char c : charSet){
+        for (char c : charSet) {
             count = charToLookFor(input, c);
             frequentie.add(new Knoop(c, count));
         }
@@ -34,15 +34,21 @@ public class Huffman {
         return frequentie;
     }
 
-    private int charToLookFor(String input, char charToLookFor){
+    private int charToLookFor(String input, char charToLookFor) {
         int freq = 0;
 
-        for(int i = 0; i < input.length(); i++) {
-            if(charToLookFor == input.charAt(i)) {
+        for (int i = 0; i < input.length(); i++) {
+            if (charToLookFor == input.charAt(i)) {
                 ++freq;
             }
         }
 
         return freq;
+    }
+
+    public PriorityQueue<Knoop> arrayToPriority(List<Knoop> frequentie) {
+        PriorityQueue<Knoop> freqPrio = new PriorityQueue<>(frequentie);
+
+        return freqPrio;
     }
 }
