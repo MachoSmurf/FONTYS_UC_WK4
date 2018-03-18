@@ -195,4 +195,47 @@ public class HuffmanTest {
     /*
     Einde opdracht 1 en 2.
      */
+
+    // Opdracht 3
+
+    @Test
+    public void testAddKnoop() {
+        System.out.println("testAddKnoop");
+        Huffman huff = new Huffman();
+        String testString1 = "bananen";
+
+        List<Knoop> resultArray = huff.countChars(testString1);
+        PriorityQueue<Knoop> resultPQ = huff.arrayToPriority(resultArray);
+
+        KnoopComparator kc = new KnoopComparator();
+        PriorityQueue<Knoop> expectedResult1 = new PriorityQueue<>(10, kc);
+
+        Knoop knoop1 = new Knoop();
+
+        knoop1.addChildren(new Knoop('b', 1), new Knoop('e', 1) );
+        knoop1.setCount(knoop1.getChildCount());
+
+        expectedResult1.add(new Knoop('a', 2));
+        expectedResult1.add(new Knoop('n', 3));
+        expectedResult1.add(knoop1);
+
+        Knoop test1 = resultPQ.poll();
+        Knoop test2 = resultPQ.poll();
+
+        Knoop test3 = expectedResult1.poll();
+        Knoop test4 = expectedResult1.poll();
+
+
+
+        String testSt552ring1 = "bananen";
+
+
+
+
+
+
+    }
+
+
+    // Einde opdracht 3
 }

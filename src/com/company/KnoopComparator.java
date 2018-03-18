@@ -13,7 +13,17 @@ public class KnoopComparator implements Comparator {
             Knoop knoopA = (Knoop) a;
             Knoop knoopB = (Knoop) b;
 
-            return knoopA.getCount() - knoopB.getCount();
+            if (knoopA.getCount() < knoopB.getCount()) {
+                return -1;
+            }
+            if (knoopA.getCount() == knoopB.getCount()) {
+                return 0;
+            }
+            if (knoopA.getCount() > knoopB.getCount()) {
+                return 1;
+            }
+            return 0;
+
         } else {
             throw new IllegalArgumentException();
         }
