@@ -1,12 +1,14 @@
 package com.company;
 
-public class CharCountHelper implements Comparable {
+public class Knoop implements Comparable {
     private int count;
     private char character;
+    private Knoop leftchild, rightchild;
 
-    public CharCountHelper(char character, int count) {
+    public Knoop(char character, int count) {
         this.count = count;
         this.character = character;
+
     }
 
     public char getCharacter() {
@@ -17,13 +19,14 @@ public class CharCountHelper implements Comparable {
         return this.count;
     }
 
+    // opdracht 2
     @Override
     public int compareTo(Object o) {
         if (o == null) {
             throw new NullPointerException();
         }
         else{
-            CharCountHelper cch = (CharCountHelper) o;
+            Knoop cch = (Knoop) o;
             return this.count - cch.count;
         }
 

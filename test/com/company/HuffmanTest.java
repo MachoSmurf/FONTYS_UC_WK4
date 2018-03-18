@@ -11,8 +11,7 @@ import static org.junit.Assert.*;
 public class HuffmanTest {
 
     /*
-    Opdracht 1a
-
+    Opdracht 1 en 2
      */
     @Test
     public void testCountChars_1() {
@@ -20,14 +19,13 @@ public class HuffmanTest {
         Huffman huff = new Huffman();
         String testString1 = "bananen";
 
-        List<CharCountHelper> result1 = huff.countChars(testString1);
-        List<CharCountHelper> expectedResult1 = new ArrayList<CharCountHelper>();
+        List<Knoop> result1 = huff.countChars(testString1);
+        List<Knoop> expectedResult1 = new ArrayList<Knoop>();
 
-
-        expectedResult1.add(new CharCountHelper('a', 2));
-        expectedResult1.add(new CharCountHelper('b', 1));
-        expectedResult1.add(new CharCountHelper('e', 1));
-        expectedResult1.add(new CharCountHelper('n', 3));
+        expectedResult1.add(new Knoop('a', 2));
+        expectedResult1.add(new Knoop('b', 1));
+        expectedResult1.add(new Knoop('e', 1));
+        expectedResult1.add(new Knoop('n', 3));
 
         Collections.sort(result1);
         Collections.sort(expectedResult1);
@@ -50,11 +48,10 @@ public class HuffmanTest {
 
         expectedResult1.clear();
 
-        expectedResult1.add(new CharCountHelper('b', 1));
-        expectedResult1.add(new CharCountHelper('a', 2));
-        expectedResult1.add(new CharCountHelper('n', 7));
-        expectedResult1.add(new CharCountHelper('e', 1));
-
+        expectedResult1.add(new Knoop('b', 1));
+        expectedResult1.add(new Knoop('a', 2));
+        expectedResult1.add(new Knoop('n', 7));
+        expectedResult1.add(new Knoop('e', 1));
 
         // result en expected result ongelijk
         //Assert.assertFalse(result1.equals(expectedResult1));
@@ -69,7 +66,6 @@ public class HuffmanTest {
             // result1 en expectedResult gelijk
             Assert.assertTrue(true);
         }
-
     }
 
     @Test
@@ -78,14 +74,14 @@ public class HuffmanTest {
         Huffman huff = new Huffman();
         String testString2 = "laptop";
 
-        List<CharCountHelper> result2 = huff.countChars(testString2);
+        List<Knoop> result2 = huff.countChars(testString2);
 
-        List<CharCountHelper> expectedResult2 = new ArrayList<CharCountHelper>();
-        expectedResult2.add(new CharCountHelper('l', 1));
-        expectedResult2.add(new CharCountHelper('a', 1));
-        expectedResult2.add(new CharCountHelper('p', 2));
-        expectedResult2.add(new CharCountHelper('t', 1));
-        expectedResult2.add(new CharCountHelper('o', 1));
+        List<Knoop> expectedResult2 = new ArrayList<Knoop>();
+        expectedResult2.add(new Knoop('l', 1));
+        expectedResult2.add(new Knoop('a', 1));
+        expectedResult2.add(new Knoop('p', 2));
+        expectedResult2.add(new Knoop('t', 1));
+        expectedResult2.add(new Knoop('o', 1));
 
         Collections.sort(result2);
         Collections.sort(expectedResult2);
@@ -109,11 +105,11 @@ public class HuffmanTest {
 
         expectedResult2.clear();
 
-        expectedResult2.add(new CharCountHelper('l', 1));
-        expectedResult2.add(new CharCountHelper('a', 1));
-        expectedResult2.add(new CharCountHelper('p', 2));
-        expectedResult2.add(new CharCountHelper('t', 1));
-        expectedResult2.add(new CharCountHelper('o', 1));
+        expectedResult2.add(new Knoop('l', 1));
+        expectedResult2.add(new Knoop('a', 1));
+        expectedResult2.add(new Knoop('p', 2));
+        expectedResult2.add(new Knoop('t', 1));
+        expectedResult2.add(new Knoop('o', 1));
 
         Collections.sort(expectedResult2);
 
@@ -137,16 +133,16 @@ public class HuffmanTest {
         Huffman huff = new Huffman();
         String testString3 = "vliegtuig";
 
-        List<CharCountHelper> result3 = huff.countChars(testString3);
+        List<Knoop> result3 = huff.countChars(testString3);
 
-        List<CharCountHelper> expectedResult3 = new ArrayList<CharCountHelper>();
-        expectedResult3.add(new CharCountHelper('v', 1));
-        expectedResult3.add(new CharCountHelper('l', 1));
-        expectedResult3.add(new CharCountHelper('i', 2));
-        expectedResult3.add(new CharCountHelper('e', 1));
-        expectedResult3.add(new CharCountHelper('g', 2));
-        expectedResult3.add(new CharCountHelper('t', 1));
-        expectedResult3.add(new CharCountHelper('u', 1));
+        List<Knoop> expectedResult3 = new ArrayList<Knoop>();
+        expectedResult3.add(new Knoop('v', 1));
+        expectedResult3.add(new Knoop('l', 1));
+        expectedResult3.add(new Knoop('i', 2));
+        expectedResult3.add(new Knoop('e', 1));
+        expectedResult3.add(new Knoop('g', 2));
+        expectedResult3.add(new Knoop('t', 1));
+        expectedResult3.add(new Knoop('u', 1));
 
         Collections.sort(result3);
         Collections.sort(expectedResult3);
@@ -170,13 +166,13 @@ public class HuffmanTest {
         }
 
         expectedResult3.clear();
-        expectedResult3.add(new CharCountHelper('v', 1));
-        expectedResult3.add(new CharCountHelper('l', 1));
-        expectedResult3.add(new CharCountHelper('i', 2));
-        expectedResult3.add(new CharCountHelper('e', 1));
-        expectedResult3.add(new CharCountHelper('g', 2));
-        expectedResult3.add(new CharCountHelper('t', 1));
-        expectedResult3.add(new CharCountHelper('u', 5));
+        expectedResult3.add(new Knoop('v', 1));
+        expectedResult3.add(new Knoop('l', 1));
+        expectedResult3.add(new Knoop('i', 2));
+        expectedResult3.add(new Knoop('e', 1));
+        expectedResult3.add(new Knoop('g', 2));
+        expectedResult3.add(new Knoop('t', 1));
+        expectedResult3.add(new Knoop('u', 5));
 
         Collections.sort(expectedResult3);
 
@@ -196,6 +192,6 @@ public class HuffmanTest {
     }
 
     /*
-    Einde opdracht 1a.
+    Einde opdracht 1 en 2.
      */
 }
