@@ -35,7 +35,7 @@ public class HuffmanTest {
                 expectedResult1.get(1).getCharacter() && result1.get(2).getCharacter() == expectedResult1.get(2).getCharacter()
                 && result1.get(3).getCharacter() == expectedResult1.get(3).getCharacter()) {
 
-            for (int i = 0; i < result1.size(); i++){
+            for (int i = 0; i < result1.size(); i++) {
                 System.out.println(String.valueOf(result1.get(i).getCharacter() + " " + String.valueOf(expectedResult1.get(i).getCharacter())));
                 System.out.println(String.valueOf(result1.get(i).getCount() + " " + String.valueOf(expectedResult1.get(i).getCount())));
             }
@@ -93,7 +93,7 @@ public class HuffmanTest {
         if (result2.get(0).getCharacter() == expectedResult2.get(0).getCharacter() && result2.get(1).getCharacter() ==
                 expectedResult2.get(1).getCharacter() && result2.get(2).getCharacter() == expectedResult2.get(2).getCharacter()
                 && result2.get(3).getCharacter() == expectedResult2.get(3).getCharacter() && result2.get(4).getCharacter() == expectedResult2.get(4).getCharacter()) {
-            for (int i = 0; i < result2.size(); i++){
+            for (int i = 0; i < result2.size(); i++) {
                 System.out.println(String.valueOf(result2.get(i).getCharacter() + " " + String.valueOf(expectedResult2.get(i).getCharacter())));
                 System.out.println(String.valueOf(result2.get(i).getCount() + " " + String.valueOf(expectedResult2.get(i).getCount())));
             }
@@ -155,7 +155,7 @@ public class HuffmanTest {
                 expectedResult3.get(1).getCharacter() && result3.get(2).getCharacter() == expectedResult3.get(2).getCharacter()
                 && result3.get(3).getCharacter() == expectedResult3.get(3).getCharacter() && result3.get(4).getCharacter() == expectedResult3.get(4).getCharacter()
                 && result3.get(5).getCharacter() == expectedResult3.get(5).getCharacter() && result3.get(6).getCharacter() == expectedResult3.get(6).getCharacter()) {
-            for (int i = 0; i < result3.size(); i++){
+            for (int i = 0; i < result3.size(); i++) {
                 System.out.println(String.valueOf(result3.get(i).getCharacter() + " " + String.valueOf(expectedResult3.get(i).getCharacter())));
                 System.out.println(String.valueOf(result3.get(i).getCount() + " " + String.valueOf(expectedResult3.get(i).getCount())));
             }
@@ -206,34 +206,28 @@ public class HuffmanTest {
 
         List<Knoop> resultArray = huff.countChars(testString1);
         PriorityQueue<Knoop> resultPQ = huff.arrayToPriority(resultArray);
+        resultPQ = huff.buildTree(resultPQ);
 
         KnoopComparator kc = new KnoopComparator();
         PriorityQueue<Knoop> expectedResult1 = new PriorityQueue<>(10, kc);
 
         Knoop knoop1 = new Knoop();
 
-        knoop1.addChildren(new Knoop('b', 1), new Knoop('e', 1) );
+        knoop1.addChildren(new Knoop('b', 1), new Knoop('e', 1));
         knoop1.setCount(knoop1.getChildCount());
 
         expectedResult1.add(new Knoop('a', 2));
         expectedResult1.add(new Knoop('n', 3));
         expectedResult1.add(knoop1);
 
+        // TODO expected result boom verder opbouwen.
+        // TODO assert schrijven
+
         Knoop test1 = resultPQ.poll();
         Knoop test2 = resultPQ.poll();
 
         Knoop test3 = expectedResult1.poll();
         Knoop test4 = expectedResult1.poll();
-
-
-
-        String testSt552ring1 = "bananen";
-
-
-
-
-
-
     }
 
 

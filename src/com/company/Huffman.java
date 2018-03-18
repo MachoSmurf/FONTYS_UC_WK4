@@ -53,15 +53,11 @@ public class Huffman {
         for (int i = 0; i < frequentie.size(); i++) {
             freqPrio.add(frequentie.get(i));
         }
-
-        freqPrio = buildTree(freqPrio);
-
         return freqPrio;
     }
 
     public PriorityQueue<Knoop> buildTree(PriorityQueue<Knoop> freqPrio) {
         PriorityQueue<Knoop> result = freqPrio;
-
         Knoop knoop1 = result.poll();
         Knoop knoop2 = result.poll();
 
@@ -70,6 +66,11 @@ public class Huffman {
         knoop3.setCount(knoop3.getChildCount());
         result.add(knoop3);
 
-        return result;
+        if (result.size() == 1) {
+            return result;
+        } else {
+            return buildTree(result);
+        }
+
     }
 }
